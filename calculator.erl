@@ -17,32 +17,33 @@ loop() ->
     %% Get user input
     Input = io:get_line("> "),
     %% Handle the input
-    handle_input(Input).
+    handle_input(string:trim(Input)).
 
 %% Handle user input
-handle_input(Input) when is_list(Input) ->
-    case string:trim(Input) of
-        "quit" -> io:format("Goodbye!~n");
-        "" -> io:format("Please enter a valid expression.~n"), loop();
-        Expression ->
-            Result = calculate(Expression),
-            io:format("Result: ~p~n", [Result]),
-            loop()
-    end.
+handle_input("quit") ->
+    io:format("Goodbye!~n");
+handle_input("") ->
+    io:format("Please enter a valid expression.~n"),
+    loop();
+handle_input(Expression) ->
+    Result = calculate(Expression),
+    io:format("Result: ~p~n", [Result]),
+    loop().
 
 %% Calculate the result of an expression
 calculate(Expression) ->
     %% Parse the expression into tokens
     Parsed = parse_expression(Expression),
+    %% Remove or comment out the debug line below
+    %% io:format("Parsed expression: ~p~n", [Parsed]),
     %% Evaluate the parsed expression
     eval(Parsed).
 
+
 %% Parse the input expression into a list of tokens
 parse_expression(Expression) ->
-    %% Add spaces around operators to handle cases like "3+4"
-    Normalized = re:replace(Expression, "([\\d]+|\\D)", "\\1 ", [global, {return, list}]),
-    %% Trim and split the expression by spaces
-    string:tokens(string:trim(Normalized), " ").
+    %% Regular expression to handle numbers, keywords (factorial), and operators
+    re:split(Expression, "\\s+", [{return, list}]).
 
 %% Evaluate the parsed expression
 eval([A, "+", B]) ->
@@ -118,4 +119,3 @@ list_to_number(List) ->
                     0
             end
     end.
-

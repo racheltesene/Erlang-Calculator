@@ -8,7 +8,7 @@ The Erlang Basic Calculator Application is a simple command-line calculator buil
 
 The purpose of writing this software is to demonstrate practical use of the Erlang language in building real-world applications. By creating a calculator, I aimed to explore and highlight the strengths of Erlang, such as its ability to handle recursion, pattern matching, and functional programming paradigms efficiently. Additionally, this project provides a hands-on learning experience with user input handling, error checking, and performing common arithmetic tasks, all while utilizing Erlang's concurrency-oriented features.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/bwovJ_tI7nc)
 
 # Development Environment
 
