@@ -1,6 +1,5 @@
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
 ## Software Description
 The Erlang Basic Calculator Application is a simple command-line calculator built using the Erlang programming language. It performs basic arithmetic operations such as addition, subtraction, multiplication, and division, as well as advanced operations like exponentiation and factorial calculations. This program also showcases key functional programming principles of Erlang, such as recursion and pattern matching. The software takes user input as mathematical expressions, processes them, and outputs the result. It is designed to handle various cases, including invalid inputs and division by zero.
 
@@ -18,7 +17,7 @@ The purpose of writing this software is to demonstrate practical use of the Erla
 - `Visual Studio Code:` A lightweight and flexible code editor that provided syntax highlighting and support for the Erlang language via extensions. It was used for writing, editing, and debugging the source code.
 
 - `Terminal/Command Line:` The terminal was used for compiling and running the Erlang program, testing its functionality, and managing the development process.
-{Describe the programming language that you used and any libraries.}
+
 
 ## Programming Language and Libraries
 The software is written in Erlang, a functional, concurrent programming language known for its reliability in distributed systems. Erlang is built around lightweight processes and message-passing concurrency, although this application focuses on its functional features such as recursion, pattern matching, and immutability.
